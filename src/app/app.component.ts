@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-world';
+  public submit(f){
+    console.log("= ",f.touched);
+  }
 }
