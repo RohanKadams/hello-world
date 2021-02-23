@@ -7,19 +7,22 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <form #f="ngForm" (ngSubmit)="submit(f)">
+  <div *ngIf="!(f.form.valid) && f.touched">
+    <div *ngIf="password.errors.required">mandatory fileds</div>
+    <div *ngIf="password.errors.pattern">pattern wrong</div>
+    <div *ngIf="password.errors.maxlength">maxlength validation</div>
+    <div *ngIf="password.errors.minlength">minlenth validation</div>
+  </div>
 <table>
   <tr>
     <td><label for="username">Login : </label></td>
-    <td><input ngModel name="username" type="text" id="username" #username="ngModel" required></td>
+    <td><input ngModel name="username" type="text" id="username" #username="ngModel" required pattern="abcd"></td>
   </tr>
   <tr>
     <td><label for="password">password : </label></td>
-    <td><input ngModel name="password" type="text" id="password" #password="ngModel" required></td>
+    <td><input ngModel name="password" type="text" id="password" #password="ngModel" maxlength="10" minlength="2" required pattern="abcd"></td>
   </tr>
 </table>
-<div *ngIf="!(f.form.valid) && f.touched">
-  <div *ngIf="password.errors.required">mandatory fileds</div>
-  <div></div>
-</div>
+
 <button id="submit">Submit</button>
 </form>
