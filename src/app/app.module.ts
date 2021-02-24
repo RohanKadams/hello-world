@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { RouteappComponent } from './routeapp/routeapp.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RouteappComponent
+    RouteappComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
